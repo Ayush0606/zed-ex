@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 
 const companies = [
@@ -107,7 +108,7 @@ const Achievements: React.FC = () => {
 
           <div className="grid grid-cols-4 mt-10 gap-6">
             {companies.map((company, idx) => (
-              <img src={company} key={idx} alt="" className="size-20 logo" />
+              <Image src={company} key={idx} alt="" className="size-20 logo" />
             ))}
           </div>
         </div>

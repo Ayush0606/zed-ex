@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import React, { useState } from "react";
 import useUserActivity from "@/hooks/useUserActivity";
+import Image from "next/image";
 
 const Nav = () => {
   const navItems = [
@@ -143,7 +144,7 @@ const Nav = () => {
               className="h-20 w-full flex items-center gap-4 p-4 border-b border-stone-800 group"
             >
               <div className="h-16 overflow-hidden">
-                <img
+                <Image
                   src={item.img}
                   alt=""
                   className="w-full h-full object-contain group-hover:scale-125  transform-all ease-in-out duration-300"

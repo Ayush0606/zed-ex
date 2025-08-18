@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
@@ -14,7 +15,7 @@ const ScrollProvider = ({ children }: ScrollProviderProps) => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // ✅ SSR safe
+    if (typeof window === "undefined") return; // ✅ avoids SSR crash
 
     const lenis = new Lenis({
       smooth: true,
@@ -24,18 +25,21 @@ const ScrollProvider = ({ children }: ScrollProviderProps) => {
 
     lenisRef.current = lenis;
 
-    // ✅ Sync Lenis with ScrollTrigger inside RAF loop
+    // ✅ RAF loop
+    let frame: number;
     const raf = (time: number) => {
       lenis.raf(time);
-      ScrollTrigger.update(); // important!
-      requestAnimationFrame(raf);
+      ScrollTrigger.update();
+      frame = requestAnimationFrame(raf);
     };
-    requestAnimationFrame(raf);
+    frame = requestAnimationFrame(raf);
 
-    // ✅ GSAP ScrollTrigger proxy setup
+    // ✅ scroller proxy
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
-        return arguments.length ? lenis.scrollTo(value) : lenis.scroll;
+        return arguments.length
+          ? lenis.scrollTo(value as number)
+          : lenis.scroll;
       },
       getBoundingClientRect() {
         return {
@@ -48,13 +52,14 @@ const ScrollProvider = ({ children }: ScrollProviderProps) => {
       pinType: document.body.style.transform ? "transform" : "fixed",
     });
 
-    // ✅ Refresh ScrollTrigger after setup
+    // ✅ Refresh after mount
     const refresh = () => ScrollTrigger.refresh();
     window.addEventListener("resize", refresh);
     refresh();
 
     return () => {
       lenis.destroy();
+      cancelAnimationFrame(frame);
       window.removeEventListener("resize", refresh);
     };
   }, []);

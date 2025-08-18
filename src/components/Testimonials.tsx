@@ -1,6 +1,7 @@
 "use client";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 import React, { useEffect, useRef } from "react";
 
@@ -98,7 +99,7 @@ const Testimonials = () => {
               key={idx}
               className="testimonial shrink-0 w-screen md:w-[60vw] flex flex-col justify-center p-8"
             >
-              <img src={review.company} alt="" className="size-16 mb-6" />
+              <Image src={review.company} alt="" className="size-16 mb-6" />
               <p className="text-xl md:text-3xl font-medium leading-snug mb-6 pr-16">
                 “{review.quote}”
               </p>

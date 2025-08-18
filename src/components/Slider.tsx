@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 
 const images = [
@@ -66,9 +67,10 @@ const Slider = () => {
         className="flex gap-2 pl-32 pr-10 mt-16 overflow-x-auto cursor-none select-none hide-scrollbar"
       >
         {images.map((path, idx) => (
-          <img
+          <Image
             src={path}
             key={idx}
+            alt=""
             className="h-[350px] md:h-[450px] object-cover"
             draggable={false}
           />
@@ -77,7 +79,7 @@ const Slider = () => {
 
       {/* Custom cursor */}
       {isHover && (
-        <img
+        <Image
           src={isPressed ? "/grab.svg" : "/hand.svg"}
           alt="custom cursor"
           style={{

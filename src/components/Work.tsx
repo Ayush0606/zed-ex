@@ -1,6 +1,7 @@
 "use client";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 import { useEffect, useRef } from "react";
 
@@ -138,7 +139,7 @@ const Card: React.FC<Service> = ({
 
         {/* Image or Video */}
         {media.type === "image" ? (
-          <img
+          <Image
             src={media.url}
             alt={title}
             className="h-[200px] w-[300px] object-cover"
