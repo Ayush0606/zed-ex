@@ -18,12 +18,14 @@ const ScrollProvider = ({ children }: ScrollProviderProps) => {
     if (typeof window === "undefined") return;
 
     const lenis = new Lenis({
-      // ⬇️ valid options in latest Lenis
       lerp: 0.1, // inertia (0 = no smoothing, 1 = no movement)
       duration: 1.2, // scroll duration in seconds
       orientation: "vertical",
       gestureOrientation: "vertical",
-      smoothTouch: false, // optional: disable smoothing on touch devices
+      smoothWheel: true, // ✅ works in v1
+      wheelMultiplier: 1, // adjust scroll speed
+      touchMultiplier: 1.5, // adjust touch speed
+      infinite: false, // loop scrolling
     });
 
     lenisRef.current = lenis;
