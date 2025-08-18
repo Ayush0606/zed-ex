@@ -15,17 +15,19 @@ const ScrollProvider = ({ children }: ScrollProviderProps) => {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // ✅ avoids SSR crash
+    if (typeof window === "undefined") return;
 
     const lenis = new Lenis({
-      smooth: true,
-      lerp: 0.1,
-      duration: 1.2,
+      // ⬇️ valid options in latest Lenis
+      lerp: 0.1, // inertia (0 = no smoothing, 1 = no movement)
+      duration: 1.2, // scroll duration in seconds
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothTouch: false, // optional: disable smoothing on touch devices
     });
 
     lenisRef.current = lenis;
 
-    // ✅ RAF loop
     let frame: number;
     const raf = (time: number) => {
       lenis.raf(time);
@@ -34,7 +36,6 @@ const ScrollProvider = ({ children }: ScrollProviderProps) => {
     };
     frame = requestAnimationFrame(raf);
 
-    // ✅ scroller proxy
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
         return arguments.length
@@ -52,7 +53,6 @@ const ScrollProvider = ({ children }: ScrollProviderProps) => {
       pinType: document.body.style.transform ? "transform" : "fixed",
     });
 
-    // ✅ Refresh after mount
     const refresh = () => ScrollTrigger.refresh();
     window.addEventListener("resize", refresh);
     refresh();
