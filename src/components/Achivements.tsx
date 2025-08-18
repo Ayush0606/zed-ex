@@ -109,7 +109,7 @@ const Achievements: React.FC = () => {
               ))}
           </div>
 
-          <div className="grid grid-cols-4 mt-10 gap-6">
+          <div className="grid grid-cols-4 mt-10 gap-3 md:gap-6">
             {companies.map((company, idx) => (
               <Image
                 src={company}
@@ -117,14 +117,14 @@ const Achievements: React.FC = () => {
                 width={80}
                 height={80}
                 alt=""
-                className="size-20 logo"
+                className="size-16 md:size-20 logo"
               />
             ))}
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-10 md:mt-20 overflow-hidden ">
+      <div className="flex flex-col md:flex-row mt-12 md:mt-20 overflow-hidden ">
         <div className="flex flex-col overflow-hidden ">
           <h5 className="text-lg -mb-3 ml-2 overflow-hidden">
             <span className="achievements-text">No. awards</span>

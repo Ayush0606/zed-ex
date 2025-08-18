@@ -54,10 +54,9 @@ const Testimonials = () => {
       ".testimonial"
     ) as NodeListOf<HTMLElement>;
 
-    // Calculate total scroll width dynamically
     let totalWidth = 0;
     sections.forEach((section) => {
-      totalWidth += section.getBoundingClientRect().width;
+      totalWidth += section.offsetWidth;
     });
     totalWidth -= containerRef.current.offsetWidth;
 
@@ -69,14 +68,17 @@ const Testimonials = () => {
         pin: true,
         scrub: 1,
         end: () => "+=" + totalWidth,
+        invalidateOnRefresh: true,
       },
     });
+
+    ScrollTrigger.refresh();
   }, []);
 
   return (
-    <div ref={containerRef} className="p-6">
+    <div ref={containerRef} className="relative p-6">
       {/* heading */}
-      <div className="flex flex-col md:flex-row gap-5 md:gap-20 mb-10 p-2">
+      <div className=" flex flex-col md:flex-row gap-5 md:gap-20 mb-10 p-2">
         <h2 className="text-3xl max-w-[950px] overflow-hidden Testimonials">
           <span className="block">Testimonials</span>
         </h2>
@@ -97,7 +99,7 @@ const Testimonials = () => {
           {testimonials.map((review, idx) => (
             <div
               key={idx}
-              className="testimonial shrink-0 w-screen md:w-[60vw] flex flex-col justify-center p-8"
+              className="testimonial shrink-0 w-screen md:w-[60vw] flex flex-col justify-center p-2 md:p-8"
             >
               <Image
                 src={review.company}
@@ -106,7 +108,7 @@ const Testimonials = () => {
                 height={64}
                 className="size-16 mb-6"
               />
-              <p className="text-xl md:text-3xl font-medium leading-snug mb-6 pr-16">
+              <p className="text-lg sm:text-xl md:text-3xl font-medium leading-snug mb-6  pr-4 sm:pr-16">
                 “{review.quote}”
               </p>
               <div className="text-lg">

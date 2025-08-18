@@ -50,7 +50,7 @@ const Footer = () => {
   return (
     <div
       ref={footerRef}
-      className="relative z-[999] h-[70vh] md:h-[100vh] flex flex-col justify-between p-6 pt-10 pb-2 mt-16  bg-background"
+      className="relative z-[999] h-[90vh] sm:h-[70vh] md:h-[100vh] flex flex-col justify-between p-6 pt-10 pb-2 mt-16  bg-background"
     >
       {/* Top footer content */}
       <div className="md:w-7/10 mx-auto footer-top flex flex-col md:flex-row md:justify-between md:mt-10 gap-10 text-sm text-gray-600">
@@ -91,7 +91,7 @@ const Footer = () => {
       </div>
 
       {/* Giant footer text */}
-      <h2 className="footer-title text-[4.5rem] md:text-[18rem] font-semibold text-center text-black leading-none overflow-hidden">
+      <h2 className="footer-title text-[3.7rem] sm:text-[4.5rem] md:text-[18rem] font-semibold text-center text-black leading-none overflow-hidden">
         {"Let's Talk".split("").map((ch, idx) => (
           <span key={idx} className="inline-block overflow-hidden">
             {ch === " " ? "\u00A0" : ch}

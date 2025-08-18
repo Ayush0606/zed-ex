@@ -33,7 +33,7 @@ const services: Service[] = [
     services: [
       ["User Experience", "User Interface", "Prototyping", "Web design"],
       ["App design", "E-commerce", "Front-end", "Back-end"],
-      ["Digital Publishing"],
+     
     ],
   },
   {
@@ -46,9 +46,9 @@ const services: Service[] = [
       url: "https://www.youtube.com/embed/9No-FiEInLA", // ✅ embed format
     },
     services: [
-      ["Graphic Design", "Illustration", "Print Design", "3D Design"],
-      ["Packaging", "Editorial Layouts", "Iconography", "Collateral"],
-      ["Art Direction", "Storyboarding"],
+      ["Graphic Design", "Illustration",  "3D Design"],
+      ["Packaging", "Editorial ", "Iconography", "Collateral"],
+
     ],
   },
   {
@@ -61,8 +61,8 @@ const services: Service[] = [
       url: "https://www.youtube.com/embed/aqz-KE-bpKQ", // ✅ embed format
     },
     services: [
-      ["Motion graphics", "2D/3D Animation", "Explainers", "Product promos"],
-      ["Advertising", "Cinematic storytelling"],
+      ["Motion graphics", "2D/3D Animation", "Explainers", ],
+      ["Advertising", " storytelling"],
     ],
   },
 ];
@@ -88,7 +88,7 @@ const Work = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-fit p-4">
+    <div ref={containerRef} className="relative z-[400] h-fit p-4">
       {/* heading */}
       <h2 className="text-3xl max-w-[950px] overflow-hidden title">
         <span className="block">What We Do</span>
@@ -125,7 +125,7 @@ const Card: React.FC<Service> = ({
   services,
 }) => {
   return (
-    <div className="sticky top-0 left-0 bg-background h-[90vh] flex flex-col lg:flex-row justify-between my-5 p-4">
+    <div className="sticky top-0 left-0 bg-background  h-screen flex flex-col lg:flex-row justify-between my-5 p-2 md:p-4 overflow-hidden">
       {/* Left Side */}
       <div className="flex-[0.3] md:flex-[0.4] flex flex-row justify-between items-start p-2">
         <h2 className="text-7xl md:text-9xl font-medium">{id}</h2>
@@ -133,9 +133,9 @@ const Card: React.FC<Service> = ({
       </div>
 
       {/* Right Side */}
-      <div className="flex-[0.7] md:flex-[0.4] flex flex-col justify-between items-start gap-7 md:gap-3">
+      <div className="flex-[0.7] md:flex-[0.4] flex flex-col justify-between items-start gap-7 md:gap-3 mt-6 md:mt-0">
         {/* Description */}
-        <p className="text-3xl">{description}</p>
+        <p className="text-2xl sm:text-3xl">{description}</p>
 
         {/* Image or Video */}
         {media.type === "image" ? (
@@ -152,7 +152,7 @@ const Card: React.FC<Service> = ({
               .split("/")
               .pop()}`}
             title={title}
-            className="h-[200px] w-[300px] object-cover"
+            className="h-[200px] w-[300px] object-cover mt-5"
             frameBorder="0"
             allow="autoplay; encrypted-media; picture-in-picture"
             allowFullScreen
@@ -160,7 +160,7 @@ const Card: React.FC<Service> = ({
         )}
 
         {/* Services in chunks of 4 */}
-        <div className="flex justify-start flex-wrap gap-8 mt-4">
+        <div className="flex justify-start flex-wrap gap-8  mt-8 md:mt-5">
           {services.map((group, i) => (
             <ul key={i} className="text-light">
               {group.map((item, j) => (
