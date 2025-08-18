@@ -85,7 +85,10 @@ const Achievements: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-fit lg:min-h-screen p-4 lg:p-10">
+    <div
+      ref={containerRef}
+      className="min-h-fit lg:min-h-screen p-4 lg:p-10 overflow-hidden "
+    >
       <div className="flex flex-col md:flex-row md:justify-between">
         <div className="flex-1">
           <h2 className=" text-3xl overflow-hidden">
@@ -108,25 +111,33 @@ const Achievements: React.FC = () => {
 
           <div className="grid grid-cols-4 mt-10 gap-6">
             {companies.map((company, idx) => (
-              <Image src={company} key={idx} alt="" className="size-20 logo" />
+              <Image
+                src={company}
+                key={idx}
+                width={80}
+                height={80}
+                alt=""
+                className="size-20 logo"
+              />
             ))}
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-10 md:mt-20">
-        <div className="flex flex-col">
+      <div className="flex flex-col md:flex-row mt-10 md:mt-20 overflow-hidden ">
+        <div className="flex flex-col overflow-hidden ">
           <h5 className="text-lg -mb-3 ml-2 overflow-hidden">
             <span className="achievements-text">No. awards</span>
           </h5>
           <h2
             ref={numberRef}
-            className="text-8xl md:text-[9rem] font-bold tracking-tight"
+            className="text-8xl md:text-[9rem] font-bold tracking-tight overflow-hidden "
+            style={{ minWidth: "6ch" }}
           >
             0
           </h2>
         </div>
-        <h4 className="text-sm mt-5 max-w-xs md:max-w-md ml-auto overflow-hidden">
+        <h4 className=" text-sm mt-5 max-w-xs md:max-w-md ml-auto overflow-hidden">
           <span className="achievements-text">
             {`No clients were ever harmed in the making of all this… wait. Yep, not even one, we've double-checked this. Design is not tequila. It can't make everyone happy`
               .split(" ")

@@ -41,7 +41,7 @@ const Nav = () => {
         onMouseLeave={() => setMouseHover(false)}
         onClick={() => setOpen(!open)}
         className={`fixed bottom-3 left-1/2 -translate-x-1/2 z-[995] h-12 w-full max-w-xs md:max-w-xl rounded-2xl bg-black text-white px-3 flex  items-center  ${
-          open ? "justify-end" : "justify-between"
+          open ? "justify-end z-[1005]" : "justify-between z-[995]"
         }  cursor-pointer `}
       >
         <div className={` ${open ? "hidden" : "flex"} gap-3 `}>
@@ -127,17 +127,21 @@ const Nav = () => {
 
       {/* content  */}
       <motion.div
-        animate={open ? { height: "450px" } : { height: "50px" }}
-        transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
-        className="fixed bottom-3 left-1/2 -translate-x-1/2 z-[990] h-[50px] w-full max-w-xs md:max-w-xl rounded-2xl bg-black text-white  flex flex-col items-start cursor-pointer py-6 px-8 overflow-hidden"
+        animate={
+          open
+            ? { maxHeight: 480, zIndex: "1000" }
+            : { maxHeight: 50, zIndex: "990" }
+        }
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="fixed bottom-3 left-1/2 -translate-x-1/2 h-[480px] z-[990] w-full max-w-xs md:max-w-xl rounded-2xl bg-black text-white flex flex-col items-start cursor-pointer py-6 px-8 overflow-hidden"
       >
         <div className="w-full flex justify-between items-center ">
-          <h2 className="text-2xl ">We Are Norrav</h2>{" "}
+          <h2 className="text-xl md:text-2xl ">We Are Norrav</h2>{" "}
           <button className={` bg-background text-black px-3 py-1 rounded-xl `}>
             Let&apos;s talk
           </button>
         </div>
-        <ul className="w-full  ">
+        <ul className="w-full mt-5  ">
           {navItems.map((item, idx) => (
             <li
               key={idx}
@@ -147,6 +151,8 @@ const Nav = () => {
                 <Image
                   src={item.img}
                   alt=""
+                  height={64}
+                  width={64}
                   className="w-full h-full object-contain group-hover:scale-125  transform-all ease-in-out duration-300"
                 />
               </div>

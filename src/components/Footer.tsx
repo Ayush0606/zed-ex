@@ -91,7 +91,7 @@ const Footer = () => {
       </div>
 
       {/* Giant footer text */}
-      <h2 className="footer-title text-[5.1rem] md:text-[18rem] font-semibold text-center text-black leading-none overflow-hidden">
+      <h2 className="footer-title text-[4.5rem] md:text-[18rem] font-semibold text-center text-black leading-none overflow-hidden">
         {"Let's Talk".split("").map((ch, idx) => (
           <span key={idx} className="inline-block overflow-hidden">
             {ch === " " ? "\u00A0" : ch}

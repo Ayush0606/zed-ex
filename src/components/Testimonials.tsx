@@ -99,7 +99,13 @@ const Testimonials = () => {
               key={idx}
               className="testimonial shrink-0 w-screen md:w-[60vw] flex flex-col justify-center p-8"
             >
-              <Image src={review.company} alt="" className="size-16 mb-6" />
+              <Image
+                src={review.company}
+                alt=""
+                width={64}
+                height={64}
+                className="size-16 mb-6"
+              />
               <p className="text-xl md:text-3xl font-medium leading-snug mb-6 pr-16">
                 “{review.quote}”
               </p>

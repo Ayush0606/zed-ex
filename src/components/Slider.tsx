@@ -71,6 +71,8 @@ const Slider = () => {
             src={path}
             key={idx}
             alt=""
+            width={1920} // required but irrelevant
+            height={1080}
             className="h-[350px] md:h-[450px] object-cover"
             draggable={false}
           />
@@ -82,6 +84,8 @@ const Slider = () => {
         <Image
           src={isPressed ? "/grab.svg" : "/hand.svg"}
           alt="custom cursor"
+          width={40}
+          height={40}
           style={{
             position: "fixed",
             left: cursorPos.x,
