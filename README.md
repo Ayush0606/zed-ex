@@ -1,6 +1,6 @@
-# Norrav Landing Page 🌐
+# AYUSH'S WORK SPACE 🌐
 
-A modern, interactive landing page showcasing the creative studio “Norrav.” Built to demonstrate UI/UX design skills, animations, and frontend development using React and modern web technologies.
+A modern, interactive landing page showcasing the creative studio "AYUSH'S WORK SPACE." Built to demonstrate UI/UX design skills, animations, and frontend development using React and modern web technologies.
 
 
 
@@ -9,7 +9,7 @@ A modern, interactive landing page showcasing the creative studio “Norrav.” 
 
 ## 📖 About the Project
 
-Norrav Landing Page is a **Next.js-based frontend project** designed to demonstrate modern UI/UX practices, interactive animations, and responsive design.  
+AYUSH'S WORK SPACE is a **Next.js-based frontend project** designed to demonstrate modern UI/UX practices, interactive animations, and responsive design.  
 It serves as both a **portfolio showcase** and a **creative studio landing page**, highlighting services like:  
 
 - Branding & Visual Identity  
@@ -26,7 +26,7 @@ The project emphasizes:
 
 ## 🚀 Live Demo
 
-**See Norrav Landing Page in action:**  
+**See AYUSH'S WORK SPACE in action:**  
 [🌐 Open Live App](https://norrav-landing-page.vercel.app/)
 
 

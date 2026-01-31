@@ -56,9 +56,9 @@ const Footer = () => {
       <div className="md:w-7/10 mx-auto footer-top flex flex-col md:flex-row md:justify-between md:mt-10 gap-10 text-sm text-gray-600">
         <div>
           <p className="font-medium text-black">General Questions</p>
-          <p>norravy@talk.in</p>
+          <p>ayush@talk.in</p>
           <p className="mt-4 font-medium text-black">Business Enquiries</p>
-          <p>norravy@bussiness.in</p>
+          <p>ayush@bussiness.in</p>
         </div>
 
         <div>
@@ -98,6 +98,11 @@ const Footer = () => {
           </span>
         ))}
       </h2>
+
+      {/* Copyright section */}
+      <div className="flex justify-center items-center pb-4 text-sm text-gray-600">
+        <p>&copy; 2026 ayushupadhyay0606. All rights reserved.</p>
+      </div>
     </div>
   );
 };

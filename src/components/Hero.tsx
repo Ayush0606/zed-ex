@@ -156,7 +156,7 @@ const Hero = () => {
       {/* First block */}
       <div className="md:ml-[-10%] lg:ml-[-30%] flex flex-col-reverse md:flex-row gap-5 items-center">
         <h1 className="text-7xl md:text-8xl lg:text-9xl font-aboreto overflow-hidden">
-          {"NORRAV".split("").map((char, ci) => (
+          {"AYUSH".split("").map((char, ci) => (
             <span
               key={ci}
               data-char={char}
