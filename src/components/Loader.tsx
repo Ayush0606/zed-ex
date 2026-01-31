@@ -48,7 +48,7 @@ const Loader = () => {
 
       return () => clearTimeout(timeout);
     }
-  }, [index]);
+  }, [index, words.length]);
 
   if (done) return null; // fully unmount after animation
 

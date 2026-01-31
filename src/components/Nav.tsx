@@ -76,7 +76,7 @@ const Nav = () => {
               animate={!mouseHover && activeUser ? { y: 0 } : { y: "-100%" }}
               transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
             >
-              We are AYUSH'S WORK SPACE
+              We are AYUSH&apos;S WORK SPACE
             </motion.div>
 
             {/* Open Menu */}
@@ -136,7 +136,7 @@ const Nav = () => {
         className="fixed bottom-3 left-1/2 -translate-x-1/2 h-[480px] z-[990] w-full max-w-xs md:max-w-xl rounded-2xl bg-black text-white flex flex-col items-start cursor-pointer py-6 px-8 overflow-hidden"
       >
         <div className="w-full flex justify-between items-center ">
-          <h2 className="text-xl md:text-2xl ">We Are AYUSH'S WORK SPACE</h2>{" "}
+          <h2 className="text-xl md:text-2xl ">We Are AYUSH&apos;S WORK SPACE</h2>{" "}
           <button className={` bg-background text-black px-3 py-1 rounded-xl `}>
             Let&apos;s talk
           </button>

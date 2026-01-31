@@ -7,8 +7,6 @@ import Nav from "@/components/Nav";
 import Testimonials from "@/components/Testimonials";
 import Work from "@/components/Work";
 
-import Image from "next/image";
-
 export default function Home() {
   return (
     <main>
